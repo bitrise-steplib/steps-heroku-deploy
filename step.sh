@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # Required Input Checks
 if [ -z "${heroku_api_key}" ] ; then
@@ -19,10 +18,15 @@ if [[ "$(uname)" == "Linux" ]] ; then
   else
     echo " (i) Installing Heroku"
     wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+    if [ $? -ne 0 ] ; then
+      echo " [!] Failed to install Heroku Toolbelt!"
+      exit 1
+    fi
   fi
 fi
 
 set -x
+set -e
 export PATH="/usr/local/heroku/bin:$PATH"
 
 touch ~/.netrc
