@@ -25,9 +25,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
   fi
 fi
 
-set -x
 set -e
-
 touch ~/.netrc
 tempdir="$(mktemp -d)"
 temp_netrc_path="$tempdir/orig.netrc"
@@ -38,8 +36,6 @@ function restore_orig_netrc {
   cp "$temp_netrc_path" ~/.netrc
 }
 
-set +e
-set +x
 echo >> ~/.netrc
 echo "machine api.heroku.com" >> ~/.netrc
 echo "  login bot@bitrise.io" >> ~/.netrc
@@ -47,22 +43,19 @@ echo "  password ${heroku_api_token}" >> ~/.netrc
 echo "machine git.heroku.com" >> ~/.netrc
 echo "  login bot@bitrise.io" >> ~/.netrc
 echo "  password ${heroku_api_token}" >> ~/.netrc
-set -x
+
+set +e
 
 heroku git:remote -a ${heroku_app_id}
 if [ $? -ne 0 ] ; then
+  echo " [!] Failed to add heroku remote"
   restore_orig_netrc
   exit 1
 fi
 
-# git fetch heroku
-# if [ $? -ne 0 ] ; then
-#   restore_orig_netrc
-#   exit 1
-# fi
-
 git push heroku HEAD:master
 if [ $? -ne 0 ] ; then
+  echo " [!] Failed to git push to heroku"
   restore_orig_netrc
   exit 1
 fi
