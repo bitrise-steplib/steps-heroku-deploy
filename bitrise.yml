@@ -9,10 +9,6 @@ app:
 
 workflows:
   test:
-    description: |-
-      * git clone a test repository into _tmp
-      * define the `envs` in `.bitrise.secrets.yml`
-      * run `bitrise run test`
     steps:
     - script:
         inputs:
