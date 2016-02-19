@@ -22,12 +22,12 @@ if [[ "$(uname)" == "Linux" ]] ; then
       echo " [!] Failed to install Heroku Toolbelt!"
       exit 1
     fi
+    export PATH="/usr/local/heroku/bin:$PATH"
   fi
 fi
 
 set -x
 set -e
-export PATH="/usr/local/heroku/bin:$PATH"
 
 touch ~/.netrc
 tempdir="$(mktemp -d)"
