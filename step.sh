@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Required Input Checks
-if [ -z "${heroku_api_key}" ] ; then
-  echo "[!] No heroku_api_key specified!"
+if [ -z "${heroku_api_token}" ] ; then
+  echo "[!] No heroku_api_token specified!"
   exit 1
 fi
 if [ -z "${heroku_app_id}" ] ; then
@@ -44,10 +44,10 @@ set +x
 echo >> ~/.netrc
 echo "machine api.heroku.com" >> ~/.netrc
 echo "  login bot@bitrise.io" >> ~/.netrc
-echo "  password ${heroku_api_key}" >> ~/.netrc
+echo "  password ${heroku_api_token}" >> ~/.netrc
 echo "machine git.heroku.com" >> ~/.netrc
 echo "  login bot@bitrise.io" >> ~/.netrc
-echo "  password ${heroku_api_key}" >> ~/.netrc
+echo "  password ${heroku_api_token}" >> ~/.netrc
 set -x
 
 heroku git:remote -a ${heroku_app_id}

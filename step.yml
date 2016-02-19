@@ -25,7 +25,7 @@ deps:
   - name: wget
 run_if: ""
 inputs:
-  - heroku_api_key: $HEROKU_API_TOKEN
+  - heroku_api_token: $HEROKU_API_TOKEN
     opts:
       title: "Heroku API Token"
       description: |
