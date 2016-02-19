@@ -30,7 +30,7 @@ set -e
 export PATH="/usr/local/heroku/bin:$PATH"
 
 touch ~/.netrc
-tempdir="$(mktemp -d -t bitrise-heroku)"
+tempdir="$(mktemp -d)"
 temp_netrc_path="$tempdir/orig.netrc"
 cp ~/.netrc "$temp_netrc_path"
 
