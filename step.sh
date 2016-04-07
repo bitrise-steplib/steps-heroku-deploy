@@ -37,6 +37,7 @@ function restore_orig_netrc {
 }
 
 echo >> ~/.netrc
+chmod 0600 ~/.netrc
 echo "machine api.heroku.com" >> ~/.netrc
 echo "  login bot@bitrise.io" >> ~/.netrc
 echo "  password ${heroku_api_token}" >> ~/.netrc

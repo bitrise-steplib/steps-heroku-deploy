@@ -2,6 +2,10 @@ title: Heroku Deploy
 summary: Deploy to Heroku
 description: |-
   Deploy to [Heroku](https://heroku.com).
+
+  This step installs the [Heroku Toolbelt](https://toolbelt.heroku.com)
+  if it's not yet installed, and it also **logs in** with the Toolbelt
+  if you're not logged in already.
 website: https://github.com/bitrise-steplib/steps-heroku-deploy
 source_code_url: https://github.com/bitrise-steplib/steps-heroku-deploy
 support_url: https://github.com/bitrise-steplib/steps-heroku-deploy/issues
