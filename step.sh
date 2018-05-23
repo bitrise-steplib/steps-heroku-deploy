@@ -54,7 +54,7 @@ if [ $? -ne 0 ] ; then
   exit 1
 fi
 
-git push heroku HEAD:master
+git push heroku HEAD:master --force
 if [ $? -ne 0 ] ; then
   echo " [!] Failed to git push to heroku"
   restore_orig_netrc
