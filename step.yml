@@ -49,3 +49,20 @@ inputs:
         Your webapp's Heroku App ID. This is the ID of the App you
         can see on your [Heroku Dashboard](https://dashboard.heroku.com/apps).
       is_required: true
+
+
+  - force_push: "true"
+    opts:
+      title: Force push to Heroku repository?
+      summary: |-
+        If this option is allowed the project will be
+        force-pushed to the Heroku repository.
+      description: |-
+        If this option is allowed the project will be
+        force-pushed to the Heroku repository. This might
+        be necessary if the repository already exists there.
+      is_required: true
+      is_expand: false
+      value_options:
+        - "true"
+        - "false"
