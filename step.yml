@@ -34,10 +34,6 @@ inputs:
         You can get your API Token by running `heroku auth:token` in
         your Terminal/Command Line, if you have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed,
         or you can follow the [official guide on Heroku](https://devcenter.heroku.com/articles/platform-api-quickstart).
-
-        If you don't change the default
-        value of this input, you can simply specify the value for the
-        key: `HEROKU_API_TOKEN`.
       is_required: true
       is_expand: true
       is_sensitive: true
