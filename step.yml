@@ -9,9 +9,7 @@ description: |-
 website: https://github.com/bitrise-steplib/steps-heroku-deploy
 source_code_url: https://github.com/bitrise-steplib/steps-heroku-deploy
 support_url: https://github.com/bitrise-steplib/steps-heroku-deploy/issues
-host_os_tags:
-  - ubuntu-14.04
-  - osx-10.11
+
 project_type_tags:
   - web
 type_tags:
@@ -36,12 +34,9 @@ inputs:
         You can get your API Token by running `heroku auth:token` in
         your Terminal/Command Line, if you have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed,
         or you can follow the [official guide on Heroku](https://devcenter.heroku.com/articles/platform-api-quickstart).
-
-        **Security**: instead of specifying the api token here, you should
-        set it in your Bitrise Secrets! If you don't change the default
-        value of this input, you can simply specify the value for the
-        key: `HEROKU_API_TOKEN`.
       is_required: true
+      is_expand: true
+      is_sensitive: true
   - heroku_app_id: $HEROKU_APP_ID
     opts:
       title: "Heroku App ID"
@@ -49,7 +44,6 @@ inputs:
         Your webapp's Heroku App ID. This is the ID of the App you
         can see on your [Heroku Dashboard](https://dashboard.heroku.com/apps).
       is_required: true
-
 
   - force_push: "true"
     opts:
@@ -62,7 +56,8 @@ inputs:
         force-pushed to the Heroku repository. This might
         be necessary if the repository already exists there.
       is_required: true
-      is_expand: false
+      is_expand: true
+      is_sensitive: true
       value_options:
         - "true"
         - "false"
