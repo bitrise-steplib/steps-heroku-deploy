@@ -21,7 +21,7 @@ deps:
   brew:
   - name: git
   - name: wget
-  - name: heroku
+  - name: heroku/brew/heroku
   apt_get:
   - name: git
   - name: wget
