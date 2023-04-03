@@ -17,7 +17,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
     echo " (i) Heroku Toolbelt already installed"
   else
     echo " (i) Installing Heroku"
-    wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+    wget -O- https://cli-assets.heroku.com/install-ubuntu.sh | sh
     if [ $? -ne 0 ] ; then
       echo " [!] Failed to install Heroku Toolbelt!"
       exit 1
