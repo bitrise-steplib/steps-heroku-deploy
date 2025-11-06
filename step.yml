@@ -11,6 +11,12 @@ source_code_url: https://github.com/bitrise-steplib/steps-heroku-deploy
 support_url: https://github.com/bitrise-steplib/steps-heroku-deploy/issues
 
 project_type_tags:
+  - cordova
+  - flutter
+  - ionic
+  - java
+  - kotlin-multiplatform
+  - node-js
   - web
 type_tags:
   - deploy
